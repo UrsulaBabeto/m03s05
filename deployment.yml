@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: m03s05
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: m03s05
+  template:
+    metadata:
+      labels:
+        app: m03s05
+    spec:
+      containers:
+        - name: meu-container
+          image: ursulababeto/ecomerce:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3333
+
